@@ -28,6 +28,10 @@ class MaxSpeedCalculator {
      let dt = (this.accel.timestamp - this.t) * 0.001; // In seconds.
      let vx = this.vx + (this.accel.x + this.ax) / 2 * dt;
      let speed = Math.abs(vx)*10;
+     console.log("accel.x: ", this.accel.x);
+     console.log("ax: ", this.ax);
+     console.log("vx: ", vx);
+     console.log("speed: ", speed);
 
      const punchTreashold = 3; // m/s
      if (this.maxSpeed < speed && speed >= punchTreashold) {

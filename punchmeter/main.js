@@ -132,9 +132,10 @@ function setToInitialState() {
   var shaking = false;
 
   function onreading() {
-    const shakeTreashold = 3 * 9.8;
+    const shakeTreashold = 3 * 0.98;
     const stillTreashold = 1;
     let magnitude = Math.hypot(acl.x, acl.y, acl.z);
+   console.log(`magnitude is ${magnitude}`);
     if (magnitude > shakeTreashold) {
       shaking = true;
     } else if (magnitude < stillTreashold && shaking) {
